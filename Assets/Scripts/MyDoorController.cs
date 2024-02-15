@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class MyDoorController : MonoBehaviour
 {
-    private Animator doorAnim;
+    public Animator doorAnim;
 
     private bool doorOpen = false;
 
     private void Awake()
     {
-        doorAnim = gameObject.GetComponent<Animator>();
+        //doorAnim = gameObject.GetComponent<Animator>();
     }
 
     public void PlayAnimation()
