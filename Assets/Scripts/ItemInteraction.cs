@@ -19,6 +19,8 @@ public class ItemInteraction : MonoBehaviour
             _isHighlighted = false;
             //Renderer selectionRenderer = _selection.GetComponent<Renderer>();
             //selectionRenderer.material.DisableKeyword("_EMISSION");
+            var materials = _selection.GetComponent<Renderer>().materials;
+            materials[1].DisableKeyword("_EMISSION");
             _selection = null;
         }
 
@@ -39,6 +41,7 @@ public class ItemInteraction : MonoBehaviour
                     Debug.Log("Test3");
                     _isHighlighted = true;
                     //selection.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                    selection.GetComponent<Renderer>().materials[1].EnableKeyword("_EMISSION");
                     nameDisplay.text = selection.gameObject.name;
                 }
                 _selection = selection;
