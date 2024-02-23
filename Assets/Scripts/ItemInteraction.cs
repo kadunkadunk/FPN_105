@@ -17,8 +17,6 @@ public class ItemInteraction : MonoBehaviour
         {
             nameDisplay.text = "";
             _isHighlighted = false;
-            //Renderer selectionRenderer = _selection.GetComponent<Renderer>();
-            //selectionRenderer.material.DisableKeyword("_EMISSION");
             var materials = _selection.GetComponent<Renderer>().materials;
             materials[1].DisableKeyword("_EMISSION");
             _selection = null;
@@ -31,16 +29,15 @@ public class ItemInteraction : MonoBehaviour
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distanceFromItem))
         {
-            Debug.Log("Test");
+            //Debug.Log("Test");
             var selection = hit.transform;
             if (selection.CompareTag(_selectTag))
             {
-                Debug.Log("Test2");
+                //Debug.Log("Test2");
                 if (selection != _isHighlighted)
                 {
-                    Debug.Log("Test3");
+                    //Debug.Log("Test3");
                     _isHighlighted = true;
-                    //selection.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
                     selection.GetComponent<Renderer>().materials[1].EnableKeyword("_EMISSION");
                     nameDisplay.text = selection.gameObject.name;
                 }
