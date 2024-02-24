@@ -17,8 +17,17 @@ public class ItemInteraction : MonoBehaviour
         {
             nameDisplay.text = "";
             _isHighlighted = false;
-            var materials = _selection.GetComponent<Renderer>().materials;
-            materials[1].DisableKeyword("_EMISSION");
+            if (_selection.gameObject.name == "Shovel")
+            {
+                var materials = _selection.GetComponent<Renderer>().materials;
+                materials[1].DisableKeyword("_EMISSION");
+            }
+            else if (_selection.gameObject.name == "Hammer")
+            {
+                _selection.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+            }
+            //var materials = _selection.GetComponent<Renderer>().materials;
+            //materials[1].DisableKeyword("_EMISSION");
             _selection = null;
         }
 
@@ -38,7 +47,17 @@ public class ItemInteraction : MonoBehaviour
                 {
                     //Debug.Log("Test3");
                     _isHighlighted = true;
-                    selection.GetComponent<Renderer>().materials[1].EnableKeyword("_EMISSION");
+                    if (selection.gameObject.name == "Shovel")
+                    {
+                        selection.GetComponent<Renderer>().materials[1].EnableKeyword("_EMISSION");
+                        
+                    }
+                   else if (selection.gameObject.name == "Hammer")
+                    {
+                        //Debug.Log("Test4");
+                        selection.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                    }
+                    { }
                     nameDisplay.text = selection.gameObject.name;
                 }
                 _selection = selection;
