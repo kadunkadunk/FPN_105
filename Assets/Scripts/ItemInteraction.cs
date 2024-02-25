@@ -34,7 +34,7 @@ public class ItemInteraction : MonoBehaviour
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        Debug.DrawRay(ray.origin, ray.direction * distanceFromItem, Color.red); 
+        //Debug.DrawRay(ray.origin, ray.direction * distanceFromItem, Color.red); 
 
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distanceFromItem))
         {
