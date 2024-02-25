@@ -15,6 +15,7 @@ public class CollisionMirrorDetection : MonoBehaviour
             Debug.Log(collision.gameObject.name);
             Debug.Log(collision.contacts[0].thisCollider.gameObject.name);
             ParticleSystem particleSystem = collision.contacts[0].thisCollider.gameObject.GetComponent<ParticleSystem>();
+            collision.contacts[0].thisCollider.GetComponent<AudioSource>().Play();
             particleSystem.Play();
         }
     }
