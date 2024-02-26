@@ -21,25 +21,25 @@ public class ItemCollect : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 3))
-        {
-            Debug.Log(hit.transform.name);
-            if (inventory != null)
-            {
-                Debug.Log("Inventory is not null");
-                objectToInstantiate = inventory.inventoryItems.Find(x => x.name == "Hammer");
-                if (objectToInstantiate != null)
-                {
-                    Debug.Log("Hammer found in inventory");
-                    //audioSource.Play();
-                    Instantiate(objectToInstantiate, hit.point, Quaternion.identity);
-                }
-            }
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //RaycastHit hit;
+        //if (Physics.Raycast(ray, out hit, 3))
+        //{
+        //    Debug.Log(hit.transform.name);
+        //    if (inventory != null)
+        //    {
+        //        Debug.Log("Inventory is not null");
+        //        objectToInstantiate = inventory.inventoryItems.Find(x => x.name == "Hammer");
+        //        if (objectToInstantiate != null)
+        //        {
+        //            Debug.Log("Hammer found in inventory");
+        //            //audioSource.Play();
+        //            Instantiate(objectToInstantiate, hit.point, Quaternion.identity);
+        //        }
+        //    }
           
           
-        }
+        //}
 
     }
 
