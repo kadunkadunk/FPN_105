@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollisionMirrorDetection : MonoBehaviour
 {
+    public Inventory inventory;
     //Detect collisions between the GameObjects with Colliders attached
     void OnCollisionEnter(Collision collision)
     {
@@ -14,9 +15,28 @@ public class CollisionMirrorDetection : MonoBehaviour
             //Debug.Log("Test2");
             Debug.Log(collision.gameObject.name);
             Debug.Log(collision.contacts[0].thisCollider.gameObject.name);
-            ParticleSystem particleSystem = collision.contacts[0].thisCollider.gameObject.GetComponent<ParticleSystem>();
-            collision.contacts[0].thisCollider.GetComponent<AudioSource>().Play();
-            particleSystem.Play();
+            inventory = collision.gameObject.GetComponent<Inventory>();
+            ParticleSystem ps = GameObject.Find("MirrorParticleSystem").GetComponent<ParticleSystem>();
+            
+            if (inventory != null)
+            {
+                Debug.Log("Inventory is not null");
+                //objectToInstantiate = inventory.inventoryItems.Find(x => x.name == "Hammer");
+                //if (objectToInstantiate != null)
+                //{
+                    //Debug.Log("Hammer found in inventory");
+                    //Instantiate(objectToInstantiate, collision.contacts[0].thisCollider.gameObject.transform.position, Quaternion.identity);
+                collision.contacts[0].thisCollider.GetComponent<AudioSource>().Play();
+                ps.Play();
+                //gameObject.SetActive(false);// Destroy(gameObject);
+                GameObject mirror = GameObject.Find("Mirror");
+                GameObject mirrorParent = GameObject.Find("MirrorParent");
+                
+                mirrorParent.SetActive(false);
+                //mirror.SetActive(false);
+                //}
+            }
+           
         }
     }
 }
