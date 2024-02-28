@@ -17,15 +17,16 @@ public class CollisionDirtDetection : MonoBehaviour
             ParticleSystem ps = GameObject.Find("DirtParticleSystem").GetComponent<ParticleSystem>();
             Debug.Log(collision.gameObject.name);
             Debug.Log(collision.contacts[0].thisCollider.gameObject.name);
-            if (inventory != null)
+            GameObject wall = GameObject.Find("DirtWallCube");
+            if (inventory != null && wall != null)
             {
-                collision.contacts[0].thisCollider.GetComponent<AudioSource>().Play();
+                
                 ps.Play();
                 //gameObject.SetActive(false);// Destroy(gameObject);
-                GameObject mirror = GameObject.Find("DirtWallCube");
+                
+                wall.SetActive(false);
             }
-            ParticleSystem ps  = collision.contacts[0].thisCollider.gameObject.GetComponent<ParticleSystem>();           
-            ps.Play();
+           
         }
         
         }

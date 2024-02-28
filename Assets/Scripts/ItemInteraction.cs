@@ -57,7 +57,11 @@ public class ItemInteraction : MonoBehaviour
                         //Debug.Log("Test4");
                         selection.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
                     }
-                    { }
+                    else if (selection.gameObject.name == "Paperclip")
+                    {
+                        selection.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                    }
+                    
                     nameDisplay.text = selection.gameObject.name;
                 }
                 _selection = selection;
