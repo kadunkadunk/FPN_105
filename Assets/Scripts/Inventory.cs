@@ -5,21 +5,24 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public List<GameObject> inventoryItems;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject useTool;
+    
 
     public void addToInventory(GameObject goobject)
     {
         inventoryItems.Add(goobject);
         Debug.Log("Added to inventory: " + goobject.name);
+    }
+
+    public void removeInventory(GameObject goobject)
+    {
+        inventoryItems.Remove(goobject);
+        Debug.Log("Removed from inventory: " + goobject.name);
+    }
+
+    public void useInventory(GameObject goobject)
+    {
+        useTool = goobject;
+        Debug.Log("Using inventory: " + goobject.name);
     }
 }

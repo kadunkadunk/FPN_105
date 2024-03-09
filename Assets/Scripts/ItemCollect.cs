@@ -59,8 +59,6 @@ public class ItemCollect : MonoBehaviour
         {
             inventory = other.GetComponent<Inventory>();
             inventory.addToInventory(gameObject); // this is the whole game object 'w'.
-            //Instantiate(objectToInstantiate, gameObject.transform.position, Quaternion.identity);
-
             gameObject.SetActive(false);// Destroy(gameObject);
             
         } else 

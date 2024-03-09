@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollisionMirrorDetection : MonoBehaviour
 {
-    public Inventory inventory;
+    public Inventory inventory = null;
     //Detect collisions between the GameObjects with Colliders attached
     void OnCollisionEnter(Collision collision)
     {
@@ -19,7 +19,7 @@ public class CollisionMirrorDetection : MonoBehaviour
             ParticleSystem ps = GameObject.Find("MirrorParticleSystem").GetComponent<ParticleSystem>();
             GameObject mirrorParent = GameObject.Find("MirrorParent");
 
-            if (inventory != null && mirrorParent != null)
+            if (inventory.inventoryItems.Count > 0 && mirrorParent != null)
             {
                 Debug.Log("Inventory is not null");
                 //objectToInstantiate = inventory.inventoryItems.Find(x => x.name == "Hammer");
