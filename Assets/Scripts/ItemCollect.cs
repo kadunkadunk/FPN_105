@@ -20,37 +20,37 @@ public class ItemCollect : MonoBehaviour
     // Update is called once per frame
      void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("Mouse down event");
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Debug.Log("Mouse down event");
+        //    RaycastHit hit;
+        //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit, 3))
-            {
-                player = GameObject.FindWithTag("Player");
-                inventory = player.GetComponent<Inventory>();
-                GameObject paperclip = inventory.inventoryItems.Find(x => x.name == "Paperclip");
-                Debug.Log("Paperclip found in inventory: " + paperclip);
+        //    if (Physics.Raycast(ray, out hit, 3))
+        //    {
+        //        player = GameObject.FindWithTag("Player");
+        //        inventory = player.GetComponent<Inventory>();
+        //        GameObject paperclip = inventory.inventoryItems.Find(x => x.name == "Paperclip");
+        //        Debug.Log("Paperclip found in inventory: " + paperclip);
 
-                Debug.Log(hit.transform.name);
-                if (inventory != null)
-                {
-                    Debug.Log("Inventory is not null");
-                    if (paperclip != null)
-                    {
-                        Debug.Log("Paperclip created");
-                        //audioSource.Play();
-                        Instantiate(paperclip, hit.point, Quaternion.identity);
-                        paperclip.SetActive(true);
-                    }
-                }
-                else
-                {
-                    Debug.Log("Inventory is null");
-                }
-            }
-        }
+        //        Debug.Log(hit.transform.name);
+        //        if (inventory != null)
+        //        {
+        //            Debug.Log("Inventory is not null");
+        //            if (paperclip != null)
+        //            {
+        //                Debug.Log("Paperclip created");
+        //                //audioSource.Play();
+        //                Instantiate(paperclip, hit.point, Quaternion.identity);
+        //                paperclip.SetActive(true);
+        //            }
+        //        }
+        //        else
+        //        {
+        //            Debug.Log("Inventory is null");
+        //        }
+        //    }
+        //}
     }
 
     private void OnTriggerEnter(Collider other)
