@@ -372,7 +372,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh60806
+  m_Name: pb_Mesh74660
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1815,7 +1815,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh40166
+  m_Name: pb_Mesh74730
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3656,7 +3656,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh64574
+  m_Name: pb_Mesh74642
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19048,6 +19048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testButton: {fileID: 0}
+  sceneNameToLoad: 
 --- !u!1 &1518148998 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 91f4bd6b12ac899408bcc45dd57ee128,
@@ -19292,7 +19293,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34334
+  m_Name: pb_Mesh74760
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -19725,6 +19726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testButton: {fileID: 0}
+  sceneNameToLoad: InventoryMenu
 --- !u!1 &1835108958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ffbfb64a73a001d44be4080d67b137c0,
@@ -19937,7 +19939,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh64932
+  m_Name: pb_Mesh74804
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20293,7 +20295,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh64686
+  m_Name: pb_Mesh74678
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class TestButtonOnScreen : MonoBehaviour
 {
     public Button testButton;
+    public string sceneNameToLoad;
     
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class TestButtonOnScreen : MonoBehaviour
     {
         if(Input.GetKeyDown("i"))
         {
-            SceneManager.LoadScene("InventoryMenu");
+            SceneManager.LoadScene(sceneNameToLoad);
         }
     }
 
