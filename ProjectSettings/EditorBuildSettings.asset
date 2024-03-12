@@ -12,11 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Playground.unity
     guid: 707acc8dffb72b144bb1ffbe1c965f3d
   - enabled: 1
-    path: Assets/Scenes/Terrain.unity
-    guid: 5139f6091e7a94e838576510c8945402
-  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: d4af4a57bc893d64f950fe40ddbf6554
+  - enabled: 1
+    path: Assets/Scenes/Terrain.unity
+    guid: 5139f6091e7a94e838576510c8945402
   - enabled: 1
     path: Assets/Scenes/InventoryMenu.unity
     guid: 80c4ec27a917f064cbaa1d2b896389a1

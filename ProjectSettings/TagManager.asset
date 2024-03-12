@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - InteractiveObject
   - Selection
+  - InventoryListDropDown
   layers:
   - Default
   - TransparentFX

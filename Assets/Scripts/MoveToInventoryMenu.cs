@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TestButtonOnScreen : MonoBehaviour
+public class MoveToInventoryMenu : MonoBehaviour
 {
     public Button testButton;
     public string sceneNameToLoad;
@@ -13,8 +13,7 @@ public class TestButtonOnScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //testButton = GameObject.Find("InventoryButton").GetComponent<Button>();
-        //testButton.onClick.AddListener(OnClick);
+       
     }
 
     // Update is called once per frame
@@ -31,6 +30,9 @@ public class TestButtonOnScreen : MonoBehaviour
     {
         oldPlayer = GameObject.FindWithTag("Player");
         PlayerManager.Instance.player = oldPlayer;
+        PlayerManager.Instance.inventory = oldPlayer.GetComponent<Inventory>();
+        //PlayerManager.Instance.inventoryItems = oldPlayer.GetComponent<Inventory>().inventoryItems;
+                
     }
     public void OnClick()
     {

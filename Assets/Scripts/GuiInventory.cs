@@ -1,34 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GuiInventory : MonoBehaviour
 {
     public Inventory inventory = null;
-    public GameObject inventoryListDropdown;
-    [SerializeField]
-    private GameObject player = null;
+    public List<GameObject> inventoryItems;
+    public TMP_Dropdown inventoryListDropdown;
+    public GameObject newplayer;
+   
     // Start is called before the first frame update
     void Start()
     {
-        inventoryListDropdown = GameObject.Find("InventoryListDropdown");
-        GameObject newPlayer = Instantiate(player);
-        inventory = newPlayer.GetComponent<Inventory>();
-        //inventory = GameObject.Find("Player").GetComponent<Inventory>();
-        if (inventory != null)
+        if (PlayerManager.Instance != null)
         {
-            Debug.Log("Inventory is not null");
+            newplayer = PlayerManager.Instance.player;
+            inventory = PlayerManager.Instance.inventory;
+            inventoryItems = PlayerManager.Instance.inventoryItems;
             Debug.Log(inventory.inventoryItems.Count);
-            inventory.inventoryItems.ForEach(delegate (GameObject go)
-            {
-                Debug.Log(go.name);
-                //inventoryListDropdown.
-                //.GetComponent<Dropdown>().options.Add(new Dropdown.OptionData() { text = go.name });
-            });
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            inventoryListDropdown = GameObject.Find("InventoryListDropdown").GetComponent<TMP_Dropdown>();
+            inventoryListDropdown.GetComponent<TMP_Dropdown>().ClearOptions();
         }
-        inventoryListDropdown.SetActive(true);
-
+        else
+        {
+            Debug.Log("PlayerManager is null");
+        }       
     }
 
     // Update is called once per frame
@@ -41,14 +41,17 @@ public class GuiInventory : MonoBehaviour
     {
         Debug.Log("Button Clicked");
 
-        if (inventory != null)
+        if (inventoryItems.Count > 0)
         {
-            inventory.inventoryItems.ForEach(delegate (GameObject go)
+            Debug.Log("Inventory has items");
+            Debug.Log(inventoryItems.Count);
+            //Debug.Log(inventory.inventoryItems[0].name);
+            foreach (GameObject go in inventoryItems)
             {
+                Debug.Log(go.name);
                 inventoryListDropdown.GetComponent<Dropdown>().options.Add(new Dropdown.OptionData() { text = go.name });
-            });
+            }
         }
-        inventoryListDropdown.SetActive(true);
 
     }
 
