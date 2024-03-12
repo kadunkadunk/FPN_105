@@ -5,15 +5,11 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance;
-    public GameObject player;
-    public Inventory inventory;
-    public List<GameObject> inventoryItems; 
-    
+    public List<string> inventoryItems;
+          
     private void Awake()
     {
-        player = GameObject.FindWithTag("Player");
-        inventory = player.GetComponent<Inventory>();
-        inventoryItems = inventory.inventoryItems;
+       
         
 
         if (Instance != null)

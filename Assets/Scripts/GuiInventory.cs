@@ -6,20 +6,19 @@ using UnityEngine.UI;
 
 public class GuiInventory : MonoBehaviour
 {
-    public Inventory inventory = null;
-    public List<GameObject> inventoryItems;
+    
+    public List<string> inventoryItems;
     public TMP_Dropdown inventoryListDropdown;
-    public GameObject newplayer;
+   
    
     // Start is called before the first frame update
     void Start()
     {
         if (PlayerManager.Instance != null)
         {
-            newplayer = PlayerManager.Instance.player;
-            inventory = PlayerManager.Instance.inventory;
+            
             inventoryItems = PlayerManager.Instance.inventoryItems;
-            Debug.Log(inventory.inventoryItems.Count);
+            Debug.Log(inventoryItems.Count);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             inventoryListDropdown = GameObject.Find("InventoryListDropdown").GetComponent<TMP_Dropdown>();
@@ -45,12 +44,12 @@ public class GuiInventory : MonoBehaviour
         {
             Debug.Log("Inventory has items");
             Debug.Log(inventoryItems.Count);
-            //Debug.Log(inventory.inventoryItems[0].name);
-            foreach (GameObject go in inventoryItems)
+            foreach (string go in inventoryItems)
             {
-                Debug.Log(go.name);
-                inventoryListDropdown.GetComponent<Dropdown>().options.Add(new Dropdown.OptionData() { text = go.name });
+                Debug.Log(go);
+                inventoryListDropdown.options.Add(new TMP_Dropdown.OptionData() { text = go });
             }
+
         }
 
     }
@@ -58,6 +57,6 @@ public class GuiInventory : MonoBehaviour
     public void OnDropdownChange()
     {
         Debug.Log("Dropdown changed");
-        inventory.useInventory(inventory.inventoryItems[inventoryListDropdown.GetComponent<Dropdown>().value]);
+        //inventory.useInventory(inventory.inventoryItems[inventoryListDropdown.GetComponent<Dropdown>().value]);
     }
 }

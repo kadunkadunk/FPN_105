@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class MoveToInventoryMenu : MonoBehaviour
 {
-    public Button testButton;
     public string sceneNameToLoad;
     public GameObject oldPlayer;
     
@@ -29,10 +28,23 @@ public class MoveToInventoryMenu : MonoBehaviour
     public void PlayerState()
     {
         oldPlayer = GameObject.FindWithTag("Player");
-        PlayerManager.Instance.player = oldPlayer;
-        PlayerManager.Instance.inventory = oldPlayer.GetComponent<Inventory>();
+        foreach(GameObject go in oldPlayer.GetComponent<Inventory>().inventoryItems)
+        {
+            Debug.Log(go.name);
+            PlayerManager.Instance.inventoryItems.Add(go.name);
+        }
+        //PlayerManager.Instance.inventoryItems = oldPlayer.GetComponent<Inventory>().inventoryItems; 
+        //PlayerManager.Instance.inventory = oldPlayer.GetComponent<Inventory>();
         //PlayerManager.Instance.inventoryItems = oldPlayer.GetComponent<Inventory>().inventoryItems;
-                
+        //inventory = player.GetComponent<Inventory>();
+        //inventoryItems = player.GetComponent<Inventory>().inventoryItems;
+        //foreach (GameObject go in inventoryItems)
+        //{
+        //    Debug.Log(inventoryItems.Count);
+        //    inventoryNames.Add(go.name);
+        //    Debug.Log(go.name);
+        //}
+
     }
     public void OnClick()
     {
