@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ItemInteraction : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class ItemInteraction : MonoBehaviour
     private Transform _selection;
     public TMP_Text nameDisplay;
     public float distanceFromItem = 3f;
+
+    public Animator doorAnimator;
+    public GameObject doorText;
+    public bool hasKey = false;
+    private bool _isOpen = false;
 
     private void Update()
     {
@@ -40,7 +46,7 @@ public class ItemInteraction : MonoBehaviour
         {
             //Debug.Log("Test");
             var selection = hit.transform;
-            if (selection.CompareTag(_selectTag))
+            if (selection.CompareTag("Selection") || selection.CompareTag("Door"))
             {
                 //Debug.Log("Test2");
                 if (selection != _isHighlighted)
@@ -67,7 +73,35 @@ public class ItemInteraction : MonoBehaviour
                 _selection = selection;
             }
         }
+
+        if(Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            DoorInteraction();
+        }
     }
+    void DoorInteraction()
+    {
+        RaycastHit hitInfo;
+        Vector2 mousePos = Mouse.current.position.ReadValue();
+        Ray rayOrigin = Camera.main.ScreenPointToRay(mousePos); 
+
+        if(Physics.Raycast(rayOrigin, out hitInfo, distanceFromItem ))
+        {
+            var selection = hitInfo.transform;
+
+            if(!_isOpen)
+            {
+                doorAnimator.SetTrigger("Open");
+                doorAnimator.ResetTrigger("Close");
+            }
+            else
+            {
+                doorAnimator.SetTrigger("Close");
+                doorAnimator.ResetTrigger("Open");
+            }
+        }
+    }
+
 }
    
 

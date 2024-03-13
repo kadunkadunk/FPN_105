@@ -19,13 +19,10 @@ public class CollisionCageDetection : MonoBehaviour
             Debug.Log(collision.contacts[0].thisCollider.gameObject.name);
             GameObject cage = GameObject.Find("CageDoor");
             doorAnimation.PlayAnimation();
-            if (inventory != null && cage != null)
+            if (inventory.inventoryItems.Count > 0 && cage != null)
             {
-
-                
-                //gameObject.SetActive(false);// Destroy(gameObject);
-
-                //cage.SetActive(false);
+                gameObject.SetActive(false);// Destroy(gameObject);
+                cage.SetActive(false);
             }
 
         }

@@ -8,6 +8,7 @@ TagManager:
   - InteractiveObject
   - Selection
   - InventoryListDropDown
+  - Door
   layers:
   - Default
   - TransparentFX
