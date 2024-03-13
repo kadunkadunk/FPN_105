@@ -5,7 +5,6 @@ using UnityEngine;
 public class CollisionCageDetection : MonoBehaviour
 {
     public Inventory inventory;
-    private MyDoorController doorAnimation;
     //Detect collisions between the GameObjects with Colliders attached
     void OnCollisionEnter(Collision collision)
     {
@@ -18,7 +17,6 @@ public class CollisionCageDetection : MonoBehaviour
             Debug.Log(collision.gameObject.name);
             Debug.Log(collision.contacts[0].thisCollider.gameObject.name);
             GameObject cage = GameObject.Find("CageDoor");
-            doorAnimation.PlayAnimation();
             if (inventory.inventoryItems.Count > 0 && cage != null)
             {
                 gameObject.SetActive(false);// Destroy(gameObject);

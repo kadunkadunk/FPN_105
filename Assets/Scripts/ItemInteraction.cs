@@ -93,11 +93,13 @@ public class ItemInteraction : MonoBehaviour
             {
                 doorAnimator.SetTrigger("Open");
                 doorAnimator.ResetTrigger("Close");
+                _isOpen = true;
             }
             else
             {
                 doorAnimator.SetTrigger("Close");
                 doorAnimator.ResetTrigger("Open");
+                _isOpen = false;
             }
         }
     }
