@@ -21,15 +21,13 @@ public class InventoryUITerrain : MonoBehaviour
     }
     private void Awake()
     {
-        Wait();
         canvas = GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
+        button = GameObject.Find("InventoryButton").GetComponent<Button>();
+        dropdown = GameObject.Find("InventoryDropdown").GetComponent<TMP_Dropdown>();
         canvas.gameObject.SetActive(false);
     }
 
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(2);
-    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -42,8 +40,7 @@ public class InventoryUITerrain : MonoBehaviour
             Debug.Log("Canvas found"); ;
             Debug.Log(canvas.gameObject.name);
                       
-            button = GameObject.Find("InventoryButton").GetComponent<Button>();
-            dropdown = GameObject.Find("InventoryDropdown").GetComponent<TMP_Dropdown>();
+            
             
             
             button.gameObject.SetActive(true);
