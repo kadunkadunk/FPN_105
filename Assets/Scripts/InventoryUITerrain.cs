@@ -15,13 +15,21 @@ public class InventoryUITerrain : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        canvas =  GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
-        Debug.Log("Canvas found");
-        canvas.gameObject.SetActive(false);
+        //Instantiate(canvas, new Vector3(912,475,0), Quaternion.identity); ;
+        
 
     }
+    private void Awake()
+    {
+        Wait();
+        canvas = GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
+        canvas.gameObject.SetActive(false);
+    }
 
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(2);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -30,7 +38,6 @@ public class InventoryUITerrain : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             
-            //_canvas = GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
             canvas.gameObject.SetActive(true);
             Debug.Log("Canvas found"); ;
             Debug.Log(canvas.gameObject.name);
@@ -70,9 +77,12 @@ public class InventoryUITerrain : MonoBehaviour
     public void OnClick()
     {
         Debug.Log("Button Clicked");
-        canvas.gameObject.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (canvas != null)
+        {
+            canvas.gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
 
     }
 }
