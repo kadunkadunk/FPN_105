@@ -35,6 +35,7 @@ public class InventoryUITerrain : MonoBehaviour
             _dropdown.gameObject.SetActive(true);
 
             _dropdown.options.Clear();
+            _dropdown.options.RemoveAll(delegate { return true; }); 
             //button.onClick.AddListener(OnClick);
             PopulateDropdown();
 
