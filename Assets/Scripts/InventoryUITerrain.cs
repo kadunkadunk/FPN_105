@@ -21,10 +21,13 @@ public class InventoryUITerrain : MonoBehaviour
     }
     private void Awake()
     {
-        canvas = GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
-        button = GameObject.Find("InventoryButton").GetComponent<Button>();
-        dropdown = GameObject.Find("InventoryDropdown").GetComponent<TMP_Dropdown>();
-        canvas.gameObject.SetActive(false);
+        //if (canvas != null)
+        //{
+            canvas = GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
+            button = GameObject.Find("InventoryButton").GetComponent<Button>();
+            dropdown = GameObject.Find("InventoryDropdown").GetComponent<TMP_Dropdown>();
+            canvas.gameObject.SetActive(false);
+        //}
     }
 
     
