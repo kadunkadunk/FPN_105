@@ -2130,7 +2130,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh34328
+  m_Name: pb_Mesh70518
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13296,6 +13296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ff4faa1ddead64fa664f8a0ae9ab44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 0}
 --- !u!4 &963719110
 Transform:
   m_ObjectHideFlags: 0
@@ -19516,7 +19517,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 8
   m_Spacing: 15
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1

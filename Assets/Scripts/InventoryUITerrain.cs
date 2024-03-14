@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class InventoryUITerrain : MonoBehaviour
 {
-    //public Button button;
+    public Button button;
     private TMP_Dropdown _dropdown;
     private List<GameObject> _list;
     private GameObject _player;
@@ -27,11 +27,11 @@ public class InventoryUITerrain : MonoBehaviour
             Cursor.visible = true;
             _canvas.gameObject.SetActive(true);
            
-            //button = GameObject.Find("InventoryButton").GetComponent<Button>();
+            button = GameObject.Find("InventoryButton").GetComponent<Button>();
             _dropdown = GameObject.Find("InventoryDropdown").GetComponent<TMP_Dropdown>();
             
             
-            //button.gameObject.SetActive(true);
+            button.gameObject.SetActive(true);
             _dropdown.gameObject.SetActive(true);
 
             _dropdown.options.Clear();
