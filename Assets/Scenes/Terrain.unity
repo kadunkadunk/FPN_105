@@ -1087,8 +1087,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ff4faa1ddead64fa664f8a0ae9ab44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
-  dropdown: {fileID: 0}
+  button: {fileID: 367439578}
+  dropdown: {fileID: 1794148745}
   list: []
   player: {fileID: 0}
   canvas: {fileID: 388797078929096501, guid: 32d7cfbebe93bee49bb59f472ce71365, type: 3}
@@ -2031,6 +2031,18 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &367439578 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 388797079565837353, guid: 32d7cfbebe93bee49bb59f472ce71365,
+    type: 3}
+  m_PrefabInstance: {fileID: 388797078849593207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &374140456
 GameObject:
   m_ObjectHideFlags: 0
@@ -19539,6 +19551,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1794148745 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 388797078870584589, guid: 32d7cfbebe93bee49bb59f472ce71365,
+    type: 3}
+  m_PrefabInstance: {fileID: 388797078849593207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1830209735
 GameObject:
   m_ObjectHideFlags: 0
@@ -20561,6 +20585,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: InventoryCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 388797078929096520, guid: 32d7cfbebe93bee49bb59f472ce71365,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 388797079353941625, guid: 32d7cfbebe93bee49bb59f472ce71365,
         type: 3}
