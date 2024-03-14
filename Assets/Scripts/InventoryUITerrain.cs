@@ -79,6 +79,7 @@ public class InventoryUITerrain : MonoBehaviour
         Debug.Log("Button Clicked");
         if (canvas != null)
         {
+            canvas = GameObject.Find("InventoryCanvas").GetComponent<Canvas>();
             canvas.gameObject.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
