@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public List<GameObject> inventoryItems;
+    public List<CollectibleItem> inventoryItems;
     public GameObject useTool;
     
 
-    public void addToInventory(GameObject goobject)
+    public void addToInventory(CollectibleItem item)
     {
-        inventoryItems.Add(goobject);
-        Debug.Log("Added to inventory: " + goobject.name);
+        inventoryItems.Add(item);
+        Debug.Log("Added to inventory: " + item.name);
     }
 
-    public void removeInventory(GameObject goobject)
+    public void removeInventory(CollectibleItem item)
     {
-        inventoryItems.Remove(goobject);
-        Debug.Log("Removed from inventory: " + goobject.name);
+        inventoryItems.Remove(item);
+        Debug.Log("Removed from inventory: " + item.name);
     }
 
-    public void useInventory(GameObject goobject)
+    public void useInventory(CollectibleItem item)
     {
-        useTool = goobject;
-        Debug.Log("Using inventory: " + goobject.name);
+        useTool = item;
+        Debug.Log("Using inventory: " + item.name);
     }
 }
