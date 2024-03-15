@@ -8,6 +8,7 @@ public class MoveToInventoryMenu : MonoBehaviour
 {
     public string sceneNameToLoad;
     public GameObject oldPlayer;
+    public CollectibleItem collectibleItem;
     
     // Start is called before the first frame update
     void Start()
@@ -28,10 +29,10 @@ public class MoveToInventoryMenu : MonoBehaviour
     public void PlayerState()
     {
         oldPlayer = GameObject.FindWithTag("Player");
-        foreach(GameObject go in oldPlayer.GetComponent<Inventory>().inventoryItems)
+        foreach(CollectibleItem ci in oldPlayer.GetComponent<Inventory>().inventoryItems)
         {
-            Debug.Log(go.name);
-            PlayerManager.Instance.inventoryItems.Add(go.name);
+            Debug.Log(ci.name);
+            PlayerManager.Instance.inventoryItems.Add(ci.name);
         }
         //PlayerManager.Instance.inventoryItems = oldPlayer.GetComponent<Inventory>().inventoryItems; 
         //PlayerManager.Instance.inventory = oldPlayer.GetComponent<Inventory>();

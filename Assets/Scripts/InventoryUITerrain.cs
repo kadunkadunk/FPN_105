@@ -9,7 +9,7 @@ public class InventoryUITerrain : MonoBehaviour
 {
     public Button button;
     public TMP_Dropdown dropdown;
-    public List<GameObject> list;
+    public List<CollectibleItem> list;
     public GameObject player;
     public Canvas canvas;
     // Start is called before the first frame update
@@ -61,9 +61,9 @@ public class InventoryUITerrain : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         list = player.GetComponent<Inventory>().inventoryItems;
-        foreach (GameObject go in list)
+        foreach (CollectibleItem ci in list)
         {
-            dropdown.options.Add(new TMP_Dropdown.OptionData() { text = go.name });
+            dropdown.options.Add(new TMP_Dropdown.OptionData() { text = ci.name });
         }
 
     }

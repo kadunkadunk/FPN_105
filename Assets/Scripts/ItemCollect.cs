@@ -10,6 +10,7 @@ public class ItemCollect : MonoBehaviour
     public Inventory inventory;
     public AudioSource audioSource;
     public GameObject player;
+    public CollectibleItem item;
     
     // Start is called before the first frame update
     void Start()
@@ -58,13 +59,32 @@ public class ItemCollect : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inventory = other.GetComponent<Inventory>();
-            inventory.addToInventory(gameObject); // this is the whole game object 'w'.
+
+            switch (this.name)
+            {
+                case "Paperclip":
+                    Debug.Log("Paperclip collected");
+                    item = this.GetComponent<CollectibleItem>();
+                    inventory.addToInventory(item);
+                    break;
+                case "Key1":
+                    Debug.Log("Key collected");
+                    item = this.GetComponent<CollectibleItem>();
+                    inventory.addToInventory(item);
+                    break;
+                case "Shovel":
+                    Debug.Log("Shovel collected");
+                    item = this.GetComponent<CollectibleItem>();
+                    inventory.addToInventory(item);
+                    break;
+                case "Hammer":
+                    Debug.Log("Hammer collected");
+                    item = this.GetComponent<CollectibleItem>();
+                    inventory.addToInventory(item);
+                    break;
+            }
+
             gameObject.SetActive(false);// Destroy(gameObject);
-            
-        } else 
-        {
-            Debug.Log("Not a player");
-            Debug.Log(other.tag);
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public List<CollectibleItem> inventoryItems;
-    public GameObject useTool;
+    public CollectibleItem useTool;
     
 
     public void addToInventory(CollectibleItem item)
