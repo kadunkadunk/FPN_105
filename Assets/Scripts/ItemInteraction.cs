@@ -53,19 +53,20 @@ public class ItemInteraction : MonoBehaviour
                 {
                     //Debug.Log("Test3");
                     _isHighlighted = true;
-                    if (selection.gameObject.name == "Shovel")
-                    {
-                        selection.GetComponent<Renderer>().materials[1].EnableKeyword("_EMISSION");
-                        
-                    }
-                   else if (selection.gameObject.name == "Hammer")
-                    {
-                        //Debug.Log("Test4");
-                        selection.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
-                    }
-                    else if (selection.gameObject.name == "Paperclip")
-                    {
-                        selection.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                    switch(selection.gameObject.name)
+                    {                         
+                        case "Shovel":
+                            selection.GetComponent<Renderer>().materials[1].EnableKeyword("_EMISSION");
+                            break;
+                        case "Hammer":
+                            selection.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                            break;
+                        case "Paperclip":
+                            selection.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                            break;
+                        case "Key1":
+                            selection.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                            break;
                     }
                     
                     nameDisplay.text = selection.gameObject.name;

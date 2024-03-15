@@ -72,6 +72,8 @@ public class InventoryUITerrain : MonoBehaviour
     {
         Debug.Log("Dropdown changed");
         player.GetComponent<Inventory>().useInventory(list[dropdown.value]);
+        //Debug.Log(list[dropdown.value].name);
+        Debug.Log(player.GetComponent<Inventory>().useTool.name);
     }
 
     public void OnClick()

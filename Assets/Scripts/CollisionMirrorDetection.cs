@@ -19,7 +19,7 @@ public class CollisionMirrorDetection : MonoBehaviour
             ParticleSystem ps = GameObject.Find("MirrorParticleSystem").GetComponent<ParticleSystem>();
             GameObject mirrorParent = GameObject.Find("MirrorParent");
 
-            if (inventory.inventoryItems.Count > 0 && mirrorParent != null)
+            if ((inventory.useTool.name == "Hammer") && mirrorParent != null)
             {
                 Debug.Log("Inventory is not null");
                 //objectToInstantiate = inventory.inventoryItems.Find(x => x.name == "Hammer");

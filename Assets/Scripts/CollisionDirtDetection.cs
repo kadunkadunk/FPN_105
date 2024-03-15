@@ -18,7 +18,7 @@ public class CollisionDirtDetection : MonoBehaviour
             Debug.Log(collision.gameObject.name);
             Debug.Log(collision.contacts[0].thisCollider.gameObject.name);
             GameObject wall = GameObject.Find("DirtWallCube");
-            if (inventory != null && wall != null)
+            if ((inventory.useTool.name == "Shovel") && wall != null)
             {
                 
                 ps.Play();

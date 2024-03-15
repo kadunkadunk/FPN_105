@@ -66,21 +66,25 @@ public class ItemCollect : MonoBehaviour
                     Debug.Log("Paperclip collected");
                     item = this.GetComponent<CollectibleItem>();
                     inventory.addToInventory(item);
+                    inventory.useTool = item;
                     break;
                 case "Key1":
                     Debug.Log("Key collected");
                     item = this.GetComponent<CollectibleItem>();
                     inventory.addToInventory(item);
+                    inventory.useTool = item;
                     break;
                 case "Shovel":
                     Debug.Log("Shovel collected");
                     item = this.GetComponent<CollectibleItem>();
                     inventory.addToInventory(item);
+                    inventory.useTool = item;
                     break;
                 case "Hammer":
                     Debug.Log("Hammer collected");
                     item = this.GetComponent<CollectibleItem>();
                     inventory.addToInventory(item);
+                    inventory.useTool = item;
                     break;
             }
 
