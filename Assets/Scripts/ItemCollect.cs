@@ -9,6 +9,7 @@ public class ItemCollect : MonoBehaviour
 {
     public Inventory inventory;
     public AudioSource audioSource;
+    public AudioClip audioClip;
     public GameObject player;
     public CollectibleItem item;
     
@@ -87,7 +88,9 @@ public class ItemCollect : MonoBehaviour
                     inventory.useTool = item;
                     break;
             }
-
+            audioSource= this.GetComponent<AudioSource>();
+            audioClip = this.GetComponent<AudioClip>();
+            audioSource.PlayOneShot(audioClip);
             gameObject.SetActive(false);// Destroy(gameObject);
         }
     }

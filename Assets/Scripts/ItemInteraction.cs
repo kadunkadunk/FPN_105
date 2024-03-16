@@ -94,12 +94,14 @@ public class ItemInteraction : MonoBehaviour
             {
                 doorAnimator.SetTrigger("Open");
                 doorAnimator.ResetTrigger("Close");
+                doorAnimator.GetComponent<AudioSource>().Play();
                 _isOpen = true;
             }
             else
             {
                 doorAnimator.SetTrigger("Close");
                 doorAnimator.ResetTrigger("Open");
+                doorAnimator.GetComponent<AudioSource>().Play();
                 _isOpen = false;
             }
         }
