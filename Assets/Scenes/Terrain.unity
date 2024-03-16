@@ -390,7 +390,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 107413628}
-  - component: {fileID: 107413627}
   m_Layer: 0
   m_Name: ValueSelected
   m_TagString: Untagged
@@ -398,23 +397,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &107413627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107413626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4ff4faa1ddead64fa664f8a0ae9ab44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 0}
-  dropdown: {fileID: 0}
-  list: []
-  player: {fileID: 0}
-  canvas: {fileID: 0}
 --- !u!4 &107413628
 Transform:
   m_ObjectHideFlags: 0
@@ -12973,7 +12955,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 963719110}
-  - component: {fileID: 963719109}
   m_Layer: 0
   m_Name: InventoryManager
   m_TagString: Untagged
@@ -12981,23 +12962,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &963719109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963719108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4ff4faa1ddead64fa664f8a0ae9ab44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 0}
-  dropdown: {fileID: 0}
-  list: []
-  player: {fileID: 0}
-  canvas: {fileID: 388797078929096520, guid: 32d7cfbebe93bee49bb59f472ce71365, type: 3}
 --- !u!4 &963719110
 Transform:
   m_ObjectHideFlags: 0
@@ -21603,7 +21567,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 107413627}
+      objectReference: {fileID: 0}
     - target: {fileID: 388797078870584590, guid: 32d7cfbebe93bee49bb59f472ce71365,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -21783,7 +21747,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 963719109}
+      objectReference: {fileID: 0}
     - target: {fileID: 388797079565837354, guid: 32d7cfbebe93bee49bb59f472ce71365,
         type: 3}
       propertyPath: m_AnchorMax.y
