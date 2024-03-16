@@ -67,6 +67,9 @@ public class ItemInteraction : MonoBehaviour
                         case "Key1":
                             selection.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
                             break;
+                        case "BookCase_Single":
+                            selection.GetComponent<Renderer>().materials[2].EnableKeyword("_EMISSION");
+                            break;
                     }
                     
                     nameDisplay.text = selection.gameObject.name;

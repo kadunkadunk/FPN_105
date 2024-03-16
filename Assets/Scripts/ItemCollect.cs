@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using System;
 
 [RequireComponent(typeof(AudioSource))]
 public class ItemCollect : MonoBehaviour 
@@ -89,9 +90,13 @@ public class ItemCollect : MonoBehaviour
                     break;
             }
             audioSource= this.GetComponent<AudioSource>();
-            audioClip = this.GetComponent<AudioClip>();
-            audioSource.PlayOneShot(audioClip);
-            gameObject.SetActive(false);// Destroy(gameObject);
+            audioSource.Play();
+            Invoke("DestroyItem", 2.0f);
+
         }
+    }
+    public void DestroyItem()
+    {
+        gameObject.SetActive(false);// Destroy(gameObject);
     }
 }
