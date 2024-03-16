@@ -32,6 +32,19 @@ public class ItemInteraction : MonoBehaviour
             {
                 _selection.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
             }
+            else if (_selection.gameObject.name == "Paperclip")
+            {
+                _selection.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+            }
+            else if (_selection.gameObject.name == "Key1")
+            {
+                _selection.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
+            }
+            else if (_selection.gameObject.name == "BookCase")
+            {
+                var materials = _selection.GetComponent<Renderer>().materials;
+                materials[2].DisableKeyword("_EMISSION");
+            }
             //var materials = _selection.GetComponent<Renderer>().materials;
             //materials[1].DisableKeyword("_EMISSION");
             _selection = null;
@@ -67,7 +80,7 @@ public class ItemInteraction : MonoBehaviour
                         case "Key1":
                             selection.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
                             break;
-                        case "BookCase_Single":
+                        case "BookCase":
                             selection.GetComponent<Renderer>().materials[2].EnableKeyword("_EMISSION");
                             break;
                         default: break;
