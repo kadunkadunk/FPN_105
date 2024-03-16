@@ -70,6 +70,7 @@ public class ItemInteraction : MonoBehaviour
                         case "BookCase_Single":
                             selection.GetComponent<Renderer>().materials[2].EnableKeyword("_EMISSION");
                             break;
+                        default: break;
                     }
                     
                     nameDisplay.text = selection.gameObject.name;
