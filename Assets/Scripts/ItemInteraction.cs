@@ -40,8 +40,9 @@ public class ItemInteraction : MonoBehaviour
             {
                 _selection.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
             }
-            else if (_selection.gameObject.name == "BookCase")
+            else if (_selection.gameObject.name == "Bookcase")
             {
+                Debug.Log("Bookcase");
                 var materials = _selection.GetComponent<Renderer>().materials;
                 materials[2].DisableKeyword("_EMISSION");
             }
@@ -80,7 +81,7 @@ public class ItemInteraction : MonoBehaviour
                         case "Key1":
                             selection.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
                             break;
-                        case "BookCase":
+                        case "Bookcase":
                             selection.GetComponent<Renderer>().materials[2].EnableKeyword("_EMISSION");
                             break;
                         default: break;
