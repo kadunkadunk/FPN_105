@@ -16,8 +16,7 @@ public class InventoryUITerrain : MonoBehaviour
     void Start()
     {
         //Instantiate(canvas, new Vector3(912,475,0), Quaternion.identity); ;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+       
 
     }
     private void Awake()
