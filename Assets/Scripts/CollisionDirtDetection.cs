@@ -14,14 +14,14 @@ public class CollisionDirtDetection : MonoBehaviour
             //If the GameObject has the same tag as specified, output this message in the console
             //Debug.Log("Test2");
             inventory = collision.gameObject.GetComponent<Inventory>();
-            ParticleSystem ps = GameObject.Find("DirtParticleSystem").GetComponent<ParticleSystem>();
+            //ParticleSystem ps = GameObject.Find("DirtParticleSystem").GetComponent<ParticleSystem>();
             Debug.Log(collision.gameObject.name);
             Debug.Log(collision.contacts[0].thisCollider.gameObject.name);
             GameObject wall = GameObject.Find("DirtWallCube");
             if ((inventory.useTool.name == "Shovel") && wall != null)
             {
                 
-                ps.Play();
+                //ps.Play();
                 //gameObject.SetActive(false);// Destroy(gameObject);
                 
                 wall.SetActive(false);
