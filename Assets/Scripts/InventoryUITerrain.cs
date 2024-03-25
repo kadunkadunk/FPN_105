@@ -34,7 +34,7 @@ public class InventoryUITerrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("q"))
+        if (Input.GetKey("q"))
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
