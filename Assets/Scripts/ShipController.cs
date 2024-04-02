@@ -15,4 +15,21 @@ public class ShipController : MonoBehaviour
 
         transform.position = transform.position + shipOffset;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Asteroid")
+        {
+            Debug.Log("You Lose!");
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        Debug.Log("You Win!");
+        Destroy(this.gameObject);
+     
+    }
 }
