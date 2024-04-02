@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShipController : MonoBehaviour
 {
     public float speed = 5.0f;
+    public int shields = 1;
     // Update is called once per frame
     void Update()
     {
@@ -18,11 +19,20 @@ public class ShipController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Asteroid")
+        if (collision.gameObject.name != "Backwall")
         {
-            Debug.Log("You Lose!");
-            Destroy(this.gameObject);
-        }
+            if (shields > 0)
+            {
+                shields--;
+                Debug.Log("Shields: " + shields);
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                Debug.Log("You Lose!");
+                Destroy(this.gameObject);
+            }
+        }               
     }
 
     private void OnTriggerEnter(Collider other)
