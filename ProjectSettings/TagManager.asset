@@ -9,6 +9,7 @@ TagManager:
   - Selection
   - InventoryListDropDown
   - Door
+  - Bottom
   layers:
   - Default
   - TransparentFX
